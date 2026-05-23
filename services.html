@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasa Zahida Florist | Zahida Florist</title>
+  <meta name="description" content="Layanan Zahida Florist untuk bunga papan, hand bouquet, bunga meja, standing flower, dan dekorasi pelaminan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #fffdf9;
+      --white: #ffffff;
+      --blush: #f6dbe1;
+      --rose: #d98b9d;
+      --sage: #7f9d88;
+      --emerald: #315f46;
+      --gold: #c9a45d;
+      --ink: #253228;
+      --muted: #6f776f;
+      --line: #eee4dc;
+      --shadow: 0 18px 45px rgba(49, 95, 70, 0.12);
+      --shadow-soft: 0 12px 28px rgba(37, 50, 40, 0.08);
+      --radius: 8px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ivory); color: var(--ink); font-family: "Poppins", sans-serif; line-height: 1.7; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(100% - 32px, var(--container)); margin: 0 auto; }
+
+    .site-nav {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 253, 249, 0.92);
+      border-bottom: 1px solid rgba(238, 228, 220, 0.74);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-inner { align-items: center; display: flex; justify-content: space-between; min-height: 76px; position: relative; }
+    .brand { color: var(--emerald); font-family: "Playfair Display", serif; font-size: 1.5rem; font-weight: 700; }
+    .brand span { color: var(--rose); }
+    .nav-links { align-items: center; display: flex; gap: 26px; list-style: none; }
+    .nav-links a { color: #3c4b41; font-size: 0.94rem; font-weight: 600; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--rose); }
+
+    .menu-toggle {
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--emerald);
+      cursor: pointer;
+      display: none;
+      height: 44px;
+      justify-content: center;
+      width: 44px;
+    }
+
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+      background: currentColor;
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      width: 20px;
+    }
+
+    .menu-toggle span { position: relative; }
+    .menu-toggle span::before { transform: translateY(-7px); }
+    .menu-toggle span::after { transform: translateY(7px); }
+
+    .page-hero {
+      background:
+        linear-gradient(90deg, rgba(255, 253, 249, 0.96), rgba(255, 253, 249, 0.74)),
+        url("https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1800&q=85") center / cover;
+      padding: 96px 0 88px;
+    }
+
+    .eyebrow { color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; margin-bottom: 10px; text-transform: uppercase; }
+    h1, h2, h3 { font-family: "Playfair Display", serif; line-height: 1.12; }
+    h1 { color: var(--emerald); font-size: clamp(2.4rem, 6vw, 5rem); max-width: 780px; }
+    h2 { color: var(--emerald); font-size: clamp(2rem, 4vw, 3.3rem); }
+    h3 { color: var(--emerald); font-size: 1.45rem; }
+    p { color: var(--muted); }
+    .page-hero p { font-size: 1.05rem; margin-top: 22px; max-width: 650px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    .section { padding: 86px 0; }
+    .section-soft { background: linear-gradient(135deg, rgba(246, 219, 225, 0.38), rgba(255, 253, 249, 0.92) 42%, rgba(127, 157, 136, 0.16)); }
+
+    .section-heading { max-width: 720px; margin-bottom: 38px; }
+    .grid { display: grid; gap: 24px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .service-card, .process-card {
+      background: var(--white);
+      border: 1px solid rgba(238, 228, 220, 0.72);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      padding: 28px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .service-card:hover, .process-card:hover { border-color: rgba(201, 164, 93, 0.48); box-shadow: var(--shadow); transform: translateY(-6px); }
+    .icon {
+      align-items: center;
+      background: linear-gradient(135deg, #f8e3e8, #eef5ef);
+      border: 1px solid rgba(201, 164, 93, 0.24);
+      border-radius: var(--radius);
+      color: var(--emerald);
+      display: inline-flex;
+      font-weight: 800;
+      height: 54px;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 54px;
+    }
+
+    .service-card p, .process-card p { margin: 12px 0 20px; }
+    .btn {
+      align-items: center;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      display: inline-flex;
+      font-weight: 700;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { box-shadow: var(--shadow-soft); transform: translateY(-2px) scale(1.01); }
+    .btn-primary { background: var(--emerald); color: var(--white); }
+    .btn-secondary { background: var(--white); border-color: var(--line); color: var(--emerald); }
+    .cta-panel {
+      align-items: center;
+      background: var(--white);
+      border: 1px solid rgba(238, 228, 220, 0.72);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+      padding: 34px;
+    }
+
+    .footer { background: #244635; color: var(--white); padding: 42px 0 24px; }
+    .footer p, .footer a, .footer address { color: rgba(255, 255, 255, 0.78); font-style: normal; }
+    .footer-grid { display: grid; gap: 24px; grid-template-columns: 1.2fr 1fr 1.2fr; margin-bottom: 28px; }
+    .footer h2, .footer h3 { color: var(--white); margin-bottom: 10px; }
+    .copyright { border-top: 1px solid rgba(255, 255, 255, 0.16); color: rgba(255, 255, 255, 0.68); font-size: 0.9rem; padding-top: 20px; text-align: center; }
+    .float-whatsapp { align-items: center; background: #25d366; border-radius: 999px; bottom: 22px; box-shadow: 0 16px 30px rgba(37, 211, 102, 0.34); color: var(--white); display: inline-flex; font-weight: 800; gap: 9px; min-height: 56px; padding: 13px 18px; position: fixed; right: 22px; z-index: 60; }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 980px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 760px) {
+      .menu-toggle { display: inline-flex; }
+      .nav-links { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); display: none; flex-direction: column; gap: 0; left: 16px; padding: 10px; position: absolute; right: 16px; top: 82px; }
+      .nav-links.is-open { display: flex; }
+      .nav-links li, .nav-links a, .btn { width: 100%; }
+      .nav-links a { display: block; padding: 13px 14px; }
+      .cta-panel, .footer-grid { display: grid; grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) { .page-hero, .section { padding: 68px 0; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Navigasi utama">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Zahida <span>Florist</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Katalog</a></li>
+        <li><a href="services.html" aria-current="page">Jasa</a></li>
+        <li><a href="address.html">Alamat</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span></button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container reveal">
+      <p class="eyebrow">Layanan premium</p>
+      <h1>Jasa Zahida Florist</h1>
+      <p>Rangkaian bunga dan dekorasi elegan untuk hadiah, ucapan, seremoni, hingga momen pernikahan yang terasa hangat dan berkelas.</p>
+      <div class="hero-actions">
+        <a class="btn btn-secondary" href="index.html">Kembali Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Service list</p>
+          <h2>Pilih Layanan</h2>
+        </div>
+        <div class="grid">
+          <article class="service-card reveal"><div class="icon">01</div><h3>Rangkaian bunga papan ucapan</h3><p>Bunga papan premium untuk ucapan bahagia, dukacita, pembukaan, dan peresmian.</p><a class="btn btn-secondary" href="contact.html?service=Rangkaian%20bunga%20papan%20ucapan">Konsultasi Jasa</a></article>
+          <article class="service-card reveal"><div class="icon">02</div><h3>Hand bouquet</h3><p>Buket tangan cantik dengan warna lembut untuk wisuda, ulang tahun, lamaran, dan hadiah.</p><a class="btn btn-secondary" href="contact.html?service=Hand%20bouquet">Konsultasi Jasa</a></article>
+          <article class="service-card reveal"><div class="icon">03</div><h3>Bunga meja</h3><p>Rangkaian bunga meja bersih dan elegan untuk rumah, kantor, restoran, dan acara intim.</p><a class="btn btn-secondary" href="contact.html?service=Bunga%20meja">Konsultasi Jasa</a></article>
+          <article class="service-card reveal"><div class="icon">04</div><h3>Standing flower</h3><p>Standing flower mewah dengan komposisi rapi untuk seremoni, grand opening, dan panggung acara.</p><a class="btn btn-secondary" href="contact.html?service=Standing%20flower">Konsultasi Jasa</a></article>
+          <article class="service-card reveal"><div class="icon">05</div><h3>Dekorasi pelaminan</h3><p>Dekorasi bunga romantis dan anggun untuk pelaminan yang terasa fresh dan premium.</p><a class="btn btn-secondary" href="contact.html?service=Dekorasi%20pelaminan">Konsultasi Jasa</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Cara pesan</p>
+          <h2>Proses Konsultasi</h2>
+        </div>
+        <div class="grid">
+          <article class="process-card reveal"><div class="icon">A</div><h3>Pilih kebutuhan</h3><p>Tentukan jenis layanan, warna bunga, tanggal acara, dan estimasi lokasi pemasangan.</p></article>
+          <article class="process-card reveal"><div class="icon">B</div><h3>Konsultasi detail</h3><p>Tim Zahida Florist membantu menyesuaikan rangkaian dengan tema, budget, dan momen.</p></article>
+          <article class="process-card reveal"><div class="icon">C</div><h3>Pesanan disiapkan</h3><p>Rangkaian dikerjakan rapi agar siap dikirim atau digunakan pada hari acara.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="cta-panel reveal">
+          <div>
+            <p class="eyebrow">Ready to order</p>
+            <h2>Konsultasikan kebutuhan acara Anda</h2>
+            <p>Hubungi Zahida Florist untuk mendapatkan rekomendasi rangkaian yang sesuai.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Hubungi Kami</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h2>Zahida Florist</h2><p>Fresh Flowers for Precious Moments</p></div>
+        <div><h3>Kontak</h3><p>WhatsApp: <a href="https://wa.me/6281219860618">+62 812-1986-0618</a></p><p>Instagram: <a href="https://www.instagram.com/arismaulana624/">@arismaulana624</a></p></div>
+        <div><h3>Alamat</h3><address>JI.Otto Iskandardinata, Babakan Ps, Kecamatan Bogor Tengah, Kota Bogor 16120</address></div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Zahida Florist. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a class="float-whatsapp" href="https://wa.me/6281219860618" aria-label="Pesan melalui WhatsApp"><span>WA</span><span>Pesan</span></a>
+
+  <script>
+    const navLinks = document.getElementById("navLinks");
+    const menuToggle = document.getElementById("menuToggle");
+    document.getElementById("year").textContent = new Date().getFullYear();
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+  </script>
+</body>
+</html>

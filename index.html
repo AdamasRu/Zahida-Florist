@@ -439,6 +439,18 @@
       width: 100%;
     }
 
+    .product-card {
+      cursor: pointer;
+    }
+
+    .product-title-link {
+      display: inline-block;
+    }
+
+    .product-title-link:hover h3 {
+      color: var(--rose);
+    }
+
     .services-grid {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }
@@ -836,16 +848,16 @@
 <body>
   <nav class="site-nav" aria-label="Navigasi utama">
     <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Zahida Florist Home">Zahida <span>Florist</span></a>
+      <a class="brand" href="index.html" aria-label="Zahida Florist Home">Zahida <span>Florist</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#katalog">Katalog</a></li>
-        <li><a href="#jasa">Jasa</a></li>
-        <li><a href="#alamat">Alamat</a></li>
-        <li><a href="#kontak">Kontak</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Katalog</a></li>
+        <li><a href="services.html">Jasa</a></li>
+        <li><a href="address.html">Alamat</a></li>
+        <li><a href="contact.html">Kontak</a></li>
       </ul>
       <div class="nav-actions">
-        <a class="btn btn-primary" href="#kontak">Pesan Sekarang</a>
+        <a class="btn btn-primary" href="contact.html">Pesan Sekarang</a>
         <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false">
           <span></span>
         </button>
@@ -864,7 +876,7 @@
         <p>Zahida Florist menghadirkan bunga segar, rangkaian cantik, dan layanan dekorasi untuk berbagai acara.</p>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#katalog">Lihat Katalog</a>
-          <a class="btn btn-secondary" href="#kontak">Hubungi Kami</a>
+          <a class="btn btn-secondary" href="contact.html">Hubungi Kami</a>
         </div>
         <div class="hero-note">
           <span>Rangkaian elegan untuk hadiah, ucapan, dan dekorasi acara.</span>
@@ -882,16 +894,18 @@
             <h2>Pilihan Bunga Segar</h2>
             <p>Koleksi bunga harian dengan tampilan cantik, warna lembut, dan kualitas segar untuk berbagai kebutuhan.</p>
           </div>
-          <a class="btn btn-secondary" href="#katalog-lengkap">Lihat Katalog Lengkap</a>
+          <a class="btn btn-secondary" href="catalog.html">Lihat Katalog Lengkap</a>
         </div>
 
-        <div class="grid catalog-grid" id="katalog-lengkap">
-          <article class="card product-card reveal" data-product="Mawar">
+        <div class="grid catalog-grid">
+          <article class="card product-card reveal" data-product="Mawar" data-url="product.html?product=mawar">
             <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1496062031456-07b8f162a322?auto=format&fit=crop&w=900&q=80" alt="Bunga mawar segar berwarna lembut">
+              <a href="product.html?product=mawar" aria-label="Lihat detail Mawar">
+                <img src="https://images.unsplash.com/photo-1496062031456-07b8f162a322?auto=format&fit=crop&w=900&q=80" alt="Bunga mawar segar berwarna lembut">
+              </a>
             </div>
             <div class="product-body">
-              <h3>Mawar</h3>
+              <a class="product-title-link" href="product.html?product=mawar"><h3>Mawar</h3></a>
               <div class="product-meta">
                 <span class="unit">1 batang</span>
                 <span class="price">Rp15.000</span>
@@ -901,12 +915,14 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product="Gerbera">
+          <article class="card product-card reveal" data-product="Gerbera" data-url="product.html?product=gerbera">
             <div class="product-image">
-              <img src="https://i.pinimg.com/1200x/d8/19/94/d81994115eda773dd1080842ca0a8be7.jpg" alt="Bunga gerbera segar">
+              <a href="product.html?product=gerbera" aria-label="Lihat detail Gerbera">
+                <img src="https://i.pinimg.com/1200x/d8/19/94/d81994115eda773dd1080842ca0a8be7.jpg" alt="Bunga gerbera segar">
+              </a>
             </div>
             <div class="product-body">
-              <h3>Gerbera</h3>
+              <a class="product-title-link" href="product.html?product=gerbera"><h3>Gerbera</h3></a>
               <div class="product-meta">
                 <span class="unit">1 batang</span>
                 <span class="price">Rp10.000</span>
@@ -916,12 +932,14 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product="Pikok">
+          <article class="card product-card reveal" data-product="Pikok" data-url="product.html?product=pikok">
             <div class="product-image">
-              <img src="https://i.pinimg.com/736x/6a/06/99/6a06993c99464d862297d47937ba44de.jpg" alt="Bunga kecil pelengkap rangkaian">
+              <a href="product.html?product=pikok" aria-label="Lihat detail Pikok">
+                <img src="https://i.pinimg.com/736x/6a/06/99/6a06993c99464d862297d47937ba44de.jpg" alt="Bunga kecil pelengkap rangkaian">
+              </a>
             </div>
             <div class="product-body">
-              <h3>Pikok</h3>
+              <a class="product-title-link" href="product.html?product=pikok"><h3>Pikok</h3></a>
               <div class="product-meta">
                 <span class="unit">1 iket</span>
                 <span class="price">Rp20.000</span>
@@ -931,50 +949,6 @@
             </div>
           </article>
 
-          <article class="card product-card reveal" data-product="Aster">
-            <div class="product-image">
-              <img src="https://i.pinimg.com/1200x/48/0e/dd/480edd81b18cf1d9ace516ce6f8f012e.jpg" alt="Bunga aster lembut untuk rangkaian">
-            </div>
-            <div class="product-body">
-              <h3>Aster</h3>
-              <div class="product-meta">
-                <span class="unit">1 iket</span>
-                <span class="price">Rp30.000</span>
-              </div>
-              <p>Aster lembut untuk rangkaian feminin yang manis, rapi, dan cocok sebagai hadiah harian.</p>
-              <button class="btn btn-blush product-order" type="button" data-product="Aster">Pesan via WhatsApp</button>
-            </div>
-          </article>
-
-          <article class="card product-card reveal" data-product="Sedap Malam">
-            <div class="product-image">
-              <img src="https://i.pinimg.com/1200x/30/81/c2/3081c228f8350d274c9507133bc4ff9b.jpg" alt="Bunga putih elegan sedap malam">
-            </div>
-            <div class="product-body">
-              <h3>Sedap Malam</h3>
-              <div class="product-meta">
-                <span class="unit">1 batang</span>
-                <span class="price">Rp70.500</span>
-              </div>
-              <p>Bunga putih beraroma elegan untuk dekorasi, acara khidmat, dan rangkaian bernuansa premium.</p>
-              <button class="btn btn-blush product-order" type="button" data-product="Sedap Malam">Pesan via WhatsApp</button>
-            </div>
-          </article>
-
-          <article class="card product-card reveal" data-product="Soli Dago">
-            <div class="product-image">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1QjACScpePyQ0XvwmRnuJGdDnniZWKL2-7bJZndcJTLPzbXnh8NYiy98Fx_dsNpet8edYzkVQZi4RbUDrgjPq5i3-4wSSKjSmIyO-m7Y&s=10" alt="Bunga pelengkap hijau untuk rangkaian florist">
-            </div>
-            <div class="product-body">
-              <h3>Soli Dago</h3>
-              <div class="product-meta">
-                <span class="unit">1 iket</span>
-                <span class="price">Rp20.000</span>
-              </div>
-              <p>Pelengkap rangkaian bernuansa hijau segar untuk memberi volume dan kesan natural yang mewah.</p>
-              <button class="btn btn-blush product-order" type="button" data-product="Soli Dago">Pesan via WhatsApp</button>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -991,31 +965,31 @@
             <div class="icon" aria-hidden="true">✦</div>
             <h3>Rangkaian bunga papan ucapan</h3>
             <p>Bunga papan berkesan premium untuk ucapan bahagia, dukacita, pembukaan, dan peresmian.</p>
-            <a class="service-link consult-link" href="#kontak" data-service="Rangkaian bunga papan ucapan">Konsultasi Jasa</a>
+            <a class="service-link consult-link" href="contact.html?service=Rangkaian%20bunga%20papan%20ucapan" data-service="Rangkaian bunga papan ucapan">Konsultasi Jasa</a>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true">♡</div>
             <h3>Hand bouquet</h3>
             <p>Buket tangan cantik dengan pilihan warna lembut untuk wisuda, ulang tahun, lamaran, dan hadiah.</p>
-            <a class="service-link consult-link" href="#kontak" data-service="Hand bouquet">Konsultasi Jasa</a>
+            <a class="service-link consult-link" href="contact.html?service=Hand%20bouquet" data-service="Hand bouquet">Konsultasi Jasa</a>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true">◌</div>
             <h3>Bunga meja</h3>
             <p>Rangkaian bunga meja yang bersih dan elegan untuk hunian, kantor, restoran, dan acara intim.</p>
-            <a class="service-link consult-link" href="#kontak" data-service="Bunga meja">Konsultasi Jasa</a>
+            <a class="service-link consult-link" href="contact.html?service=Bunga%20meja" data-service="Bunga meja">Konsultasi Jasa</a>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true">✧</div>
             <h3>Standing flower</h3>
             <p>Standing flower mewah dengan komposisi rapi untuk seremoni, grand opening, dan panggung acara.</p>
-            <a class="service-link consult-link" href="#kontak" data-service="Standing flower">Konsultasi Jasa</a>
+            <a class="service-link consult-link" href="contact.html?service=Standing%20flower" data-service="Standing flower">Konsultasi Jasa</a>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true">❋</div>
             <h3>Dekorasi pelaminan</h3>
             <p>Dekorasi bunga bernuansa romantis dan anggun untuk pelaminan yang terasa hangat serta berkelas.</p>
-            <a class="service-link consult-link" href="#kontak" data-service="Dekorasi pelaminan">Konsultasi Jasa</a>
+            <a class="service-link consult-link" href="contact.html?service=Dekorasi%20pelaminan" data-service="Dekorasi pelaminan">Konsultasi Jasa</a>
           </article>
         </div>
       </div>
@@ -1061,7 +1035,7 @@
               <h3>Zahida Florist Bogor</h3>
               <address>JI.Otto Iskandardinata, Babakan Ps, Kecamatan Bogor Tengah, Kota Bogor 16120</address>
             </div>
-            <a class="btn btn-primary" href="https://maps.app.goo.gl/DxXxKtvTd8PHArpp8">Buka Google Maps</a>
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=JI.Otto%20Iskandardinata%2C%20Babakan%20Ps%2C%20Kecamatan%20Bogor%20Tengah%2C%20Kota%20Bogor%2016120">Buka Google Maps</a>
           </article>
           <div class="map-card reveal" role="img" aria-label="Ilustrasi peta lokasi Zahida Florist">
             <div class="map-marker">
@@ -1225,9 +1199,13 @@
       });
     });
 
-    document.querySelectorAll(".consult-link").forEach((link) => {
-      link.addEventListener("click", () => {
-        prefillOrder(link.dataset.service);
+    document.querySelectorAll(".product-card").forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("button") || event.target.closest("a")) {
+          return;
+        }
+
+        window.location.href = card.dataset.url;
       });
     });
 

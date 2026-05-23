@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Lengkap | Zahida Florist</title>
+  <meta name="description" content="Katalog lengkap bunga Zahida Florist untuk pemesanan bunga segar, rangkaian, dan dekorasi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #fffdf9;
+      --white: #ffffff;
+      --blush: #f6dbe1;
+      --rose: #d98b9d;
+      --sage: #7f9d88;
+      --emerald: #315f46;
+      --gold: #c9a45d;
+      --ink: #253228;
+      --muted: #6f776f;
+      --line: #eee4dc;
+      --shadow: 0 18px 45px rgba(49, 95, 70, 0.12);
+      --shadow-soft: 0 12px 28px rgba(37, 50, 40, 0.08);
+      --radius: 8px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: "Poppins", sans-serif;
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 253, 249, 0.92);
+      border-bottom: 1px solid rgba(238, 228, 220, 0.74);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-inner {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      min-height: 76px;
+      position: relative;
+    }
+
+    .brand {
+      color: var(--emerald);
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .brand span {
+      color: var(--rose);
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #3c4b41;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--rose);
+    }
+
+    .menu-toggle {
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--emerald);
+      cursor: pointer;
+      display: none;
+      height: 44px;
+      justify-content: center;
+      width: 44px;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      background: currentColor;
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      width: 20px;
+    }
+
+    .menu-toggle span {
+      position: relative;
+    }
+
+    .menu-toggle span::before {
+      transform: translateY(-7px);
+    }
+
+    .menu-toggle span::after {
+      transform: translateY(7px);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(90deg, rgba(255, 253, 249, 0.96), rgba(255, 253, 249, 0.72)),
+        url("https://images.unsplash.com/photo-1487070183336-b863922373d4?auto=format&fit=crop&w=1800&q=85") center / cover;
+      padding: 92px 0 84px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.12;
+    }
+
+    h1 {
+      color: var(--emerald);
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      max-width: 780px;
+    }
+
+    h2 {
+      color: var(--emerald);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+    }
+
+    h3 {
+      color: var(--emerald);
+      font-size: 1.45rem;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .page-hero p {
+      font-size: 1.05rem;
+      margin: 22px 0 0;
+      max-width: 650px;
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .toolbar {
+      align-items: end;
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      align-items: center;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      display: inline-flex;
+      font-weight: 700;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-2px) scale(1.01);
+    }
+
+    .btn-primary {
+      background: var(--emerald);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      border-color: var(--line);
+      color: var(--emerald);
+    }
+
+    .btn-blush {
+      background: #f8e5e9;
+      color: #8f4657;
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(238, 228, 220, 0.72);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(201, 164, 93, 0.48);
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+
+    .product-image {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      width: 100%;
+    }
+
+    .card:hover .product-image img {
+      transform: scale(1.055);
+    }
+
+    .product-body {
+      padding: 24px;
+    }
+
+    .product-meta {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      margin: 10px 0 14px;
+    }
+
+    .unit {
+      background: #eef5ef;
+      border-radius: 999px;
+      color: var(--emerald);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 5px 11px;
+    }
+
+    .price {
+      color: #9f6c22;
+      font-weight: 800;
+    }
+
+    .product-body .btn {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .footer {
+      background: #244635;
+      color: var(--white);
+      padding: 42px 0 24px;
+    }
+
+    .footer p,
+    .footer a,
+    .footer address {
+      color: rgba(255, 255, 255, 0.78);
+      font-style: normal;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      margin-bottom: 28px;
+    }
+
+    .footer h2,
+    .footer h3 {
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.9rem;
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .float-whatsapp {
+      align-items: center;
+      background: #25d366;
+      border-radius: 999px;
+      bottom: 22px;
+      box-shadow: 0 16px 30px rgba(37, 211, 102, 0.34);
+      color: var(--white);
+      display: inline-flex;
+      font-weight: 800;
+      gap: 9px;
+      min-height: 56px;
+      padding: 13px 18px;
+      position: fixed;
+      right: 22px;
+      z-index: 60;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        left: 16px;
+        padding: 10px;
+        position: absolute;
+        right: 16px;
+        top: 82px;
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-links li,
+      .nav-links a,
+      .btn {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px 14px;
+      }
+
+      .toolbar,
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-hero,
+      .section {
+        padding: 68px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-meta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Navigasi utama">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Zahida <span>Florist</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html" aria-current="page">Katalog</a></li>
+        <li><a href="services.html">Jasa</a></li>
+        <li><a href="address.html">Alamat</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container reveal">
+      <p class="eyebrow">Katalog lengkap</p>
+      <h1>Koleksi Bunga Zahida Florist</h1>
+      <p>Pilih bunga segar favorit Anda, buka detail produk, lalu pesan langsung melalui WhatsApp.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="toolbar reveal">
+          <div>
+            <p class="eyebrow">Fresh flower catalog</p>
+            <h2>Semua Produk</h2>
+          </div>
+          <a class="btn btn-secondary" href="index.html">Kembali Home</a>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal product-card" data-url="product.html?product=mawar">
+            <div class="product-image">
+              <a href="product.html?product=mawar"><img src="https://images.unsplash.com/photo-1496062031456-07b8f162a322?auto=format&fit=crop&w=900&q=80" alt="Mawar segar"></a>
+            </div>
+            <div class="product-body">
+              <a href="product.html?product=mawar"><h3>Mawar</h3></a>
+              <div class="product-meta"><span class="unit">1 batang</span><span class="price">Rp15.000</span></div>
+              <p>Mawar klasik yang anggun untuk hadiah romantis, ucapan spesial, dan dekorasi manis.</p>
+              <a class="btn btn-blush order-link" href="https://wa.me/6281219860618?text=Halo%20Zahida%20Florist%2C%20saya%20ingin%20memesan%20Mawar.">Pesan via WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card reveal product-card" data-url="product.html?product=gerbera">
+            <div class="product-image">
+              <a href="product.html?product=gerbera"><img src="https://i.pinimg.com/1200x/d8/19/94/d81994115eda773dd1080842ca0a8be7.jpg" alt="Gerbera segar"></a>
+            </div>
+            <div class="product-body">
+              <a href="product.html?product=gerbera"><h3>Gerbera</h3></a>
+              <div class="product-meta"><span class="unit">1 batang</span><span class="price">Rp10.000</span></div>
+              <p>Gerbera cerah dengan bentuk cantik untuk rangkaian yang terasa segar dan menawan.</p>
+              <a class="btn btn-blush order-link" href="https://wa.me/6281219860618?text=Halo%20Zahida%20Florist%2C%20saya%20ingin%20memesan%20Gerbera.">Pesan via WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card reveal product-card" data-url="product.html?product=pikok">
+            <div class="product-image">
+              <a href="product.html?product=pikok"><img src="https://i.pinimg.com/736x/6a/06/99/6a06993c99464d862297d47937ba44de.jpg" alt="Pikok untuk rangkaian"></a>
+            </div>
+            <div class="product-body">
+              <a href="product.html?product=pikok"><h3>Pikok</h3></a>
+              <div class="product-meta"><span class="unit">1 iket</span><span class="price">Rp20.000</span></div>
+              <p>Bunga pelengkap bertekstur halus untuk membuat buket terlihat lebih penuh dan hidup.</p>
+              <a class="btn btn-blush order-link" href="https://wa.me/6281219860618?text=Halo%20Zahida%20Florist%2C%20saya%20ingin%20memesan%20Pikok.">Pesan via WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card reveal product-card" data-url="product.html?product=aster">
+            <div class="product-image">
+              <a href="product.html?product=aster"><img src="https://i.pinimg.com/1200x/48/0e/dd/480edd81b18cf1d9ace516ce6f8f012e.jpg" alt="Aster lembut"></a>
+            </div>
+            <div class="product-body">
+              <a href="product.html?product=aster"><h3>Aster</h3></a>
+              <div class="product-meta"><span class="unit">1 iket</span><span class="price">Rp30.000</span></div>
+              <p>Aster lembut untuk rangkaian feminin yang manis, rapi, dan cocok sebagai hadiah harian.</p>
+              <a class="btn btn-blush order-link" href="https://wa.me/6281219860618?text=Halo%20Zahida%20Florist%2C%20saya%20ingin%20memesan%20Aster.">Pesan via WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card reveal product-card" data-url="product.html?product=sedap-malam">
+            <div class="product-image">
+              <a href="product.html?product=sedap-malam"><img src="https://i.pinimg.com/1200x/30/81/c2/3081c228f8350d274c9507133bc4ff9b.jpg" alt="Sedap Malam putih"></a>
+            </div>
+            <div class="product-body">
+              <a href="product.html?product=sedap-malam"><h3>Sedap Malam</h3></a>
+              <div class="product-meta"><span class="unit">1 batang</span><span class="price">Rp70.500</span></div>
+              <p>Bunga putih beraroma elegan untuk dekorasi, acara khidmat, dan nuansa premium.</p>
+              <a class="btn btn-blush order-link" href="https://wa.me/6281219860618?text=Halo%20Zahida%20Florist%2C%20saya%20ingin%20memesan%20Sedap%20Malam.">Pesan via WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card reveal product-card" data-url="product.html?product=soli-dago">
+            <div class="product-image">
+              <a href="product.html?product=soli-dago"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1QjACScpePyQ0XvwmRnuJGdDnniZWKL2-7bJZndcJTLPzbXnh8NYiy98Fx_dsNpet8edYzkVQZi4RbUDrgjPq5i3-4wSSKjSmIyO-m7Y&s=10" alt="Soli Dago hijau segar"></a>
+            </div>
+            <div class="product-body">
+              <a href="product.html?product=soli-dago"><h3>Soli Dago</h3></a>
+              <div class="product-meta"><span class="unit">1 iket</span><span class="price">Rp20.000</span></div>
+              <p>Pelengkap rangkaian bernuansa hijau segar untuk memberi volume dan kesan natural.</p>
+              <a class="btn btn-blush order-link" href="https://wa.me/6281219860618?text=Halo%20Zahida%20Florist%2C%20saya%20ingin%20memesan%20Soli%20Dago.">Pesan via WhatsApp</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Zahida Florist</h2>
+          <p>Fresh Flowers for Precious Moments</p>
+        </div>
+        <div>
+          <h3>Kontak</h3>
+          <p>WhatsApp: <a href="https://wa.me/6281219860618">+62 812-1986-0618</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/arismaulana624/">@arismaulana624</a></p>
+        </div>
+        <div>
+          <h3>Alamat</h3>
+          <address>JI.Otto Iskandardinata, Babakan Ps, Kecamatan Bogor Tengah, Kota Bogor 16120</address>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Zahida Florist. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a class="float-whatsapp" href="https://wa.me/6281219860618" aria-label="Pesan melalui WhatsApp"><span>WA</span><span>Pesan</span></a>
+
+  <script>
+    const navLinks = document.getElementById("navLinks");
+    const menuToggle = document.getElementById("menuToggle");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.querySelectorAll(".product-card").forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          return;
+        }
+
+        window.location.href = card.dataset.url;
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+  </script>
+</body>
+</html>
